@@ -1,0 +1,13 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- SDK Dialog Theme -->
+    <style name="Theme.UniteSDK.Dialog" parent="Theme.AppCompat.Light.Dialog">
+        <!-- Remove title bar -->
+        <item name="windowNoTitle">true</item>
+        <!-- Make background transparent/dimmed -->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <!-- Animation -->
+        <item name="android:windowEnterAnimation">@android:anim/fade_in</item>
+        <item name="android:windowExitAnimation">@android:anim/fade_out</item>
+    </style>
+</resources>

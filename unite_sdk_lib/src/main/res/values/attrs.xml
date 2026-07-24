@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 在布局 XML 里给广告位控件写 app:slotId="..."，控件 attach 时会自动 loadSlot，
+         宿主无需任何 Kotlin 代码即可接入一个广告位。 -->
+    <attr name="slotId" format="string" />
+
+    <declare-styleable name="BigCardView">
+        <attr name="slotId" />
+    </declare-styleable>
+    <declare-styleable name="BigVideoView">
+        <attr name="slotId" />
+    </declare-styleable>
+    <declare-styleable name="ThreeCardsView">
+        <attr name="slotId" />
+    </declare-styleable>
+    <declare-styleable name="GameCenterView">
+        <attr name="slotId" />
+    </declare-styleable>
+</resources>

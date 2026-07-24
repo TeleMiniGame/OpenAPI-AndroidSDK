@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:background="#F2F2F2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- 顶部说明：本页游戏位使用系统语言（不受首页语言下拉影响） -->
+        <TextView
+            android:id="@+id/languageInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:background="#FFFFFF"
+            android:textColor="#1A1A1A"
+            android:textSize="13sp" />
+
+        <com.unite.sdk.view.BigVideoView
+            android:id="@+id/bigVideo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"/>
+
+        <!-- 九宫格 -->
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/gridMenu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <com.unite.sdk.view.ThreeCardsView
+            android:id="@+id/threeCardsView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+        <!-- card list -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/cardList"
+            android:layout_width="match_parent"
+            android:layout_height="140dp"
+            android:layout_marginTop="16dp"/>
+
+        <!-- card ad -->
+
+        <com.unite.sdk.view.BigCardView
+            android:id="@+id/bigcardAd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"/>
+
+        <!-- device list -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/deviceList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"/>
+
+
+
+
+        <!-- multi ad -->
+        <com.unite.sdk.view.RandomCardsView
+            android:id="@+id/multiAd"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginTop="16dp"/>
+
+    </LinearLayout>
+
+</ScrollView>

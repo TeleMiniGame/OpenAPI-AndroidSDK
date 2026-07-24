@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true"
+    android:background="#000000">
+
+    <!-- 顶部固定 bar：占垂直高度，WebView 在其下方，物理上与网页内广告不重叠 -->
+    <RelativeLayout
+        android:id="@+id/web_top_bar"
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:background="#000000">
+
+        <!-- 左：返回 -->
+        <ImageButton
+            android:id="@+id/btn_bar_back"
+            android:layout_width="48dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="back"
+            android:src="@drawable/ic_arrow_back_white"
+            android:scaleType="fitCenter"
+            android:padding="8dp" />
+
+        <!-- 右：reload -->
+        <ImageButton
+            android:id="@+id/btn_bar_reload"
+            android:layout_width="48dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="reload"
+            android:src="@drawable/ic_reload_white"
+            android:scaleType="fitCenter"
+            android:padding="8dp" />
+
+    </RelativeLayout>
+
+    <!-- 内容区：WebView 填满 bar 以下的剩余空间 -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <WebView
+            android:id="@+id/webview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#000000" />
+
+        <ProgressBar
+            android:id="@+id/web_loading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:indeterminateTint="#FFFFFF" />
+
+    </FrameLayout>
+
+    <!--胶囊按钮
+    <LinearLayout
+        android:id="@+id/capsule_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="32dp"
+        android:layout_gravity="top|end"
+        android:layout_marginTop="56dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/bg_capsule_btn"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/btn_capsule_back"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="reload"
+            android:src="@drawable/ic_reload_white"
+            android:scaleType="center"
+            android:padding="8dp" />
+
+        <View
+            android:layout_width="0.5dp"
+            android:layout_height="16dp"
+            android:layout_gravity="center_vertical"
+            android:background="#66FFFFFF" />
+
+        <ImageButton
+            android:id="@+id/btn_capsule_close"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="close"
+            android:src="@drawable/ic_close_black"
+            android:tint="#FFFFFF"
+            android:scaleType="center"
+            android:padding="8dp" />
+
+    </LinearLayout>
+   -->
+
+</LinearLayout>
