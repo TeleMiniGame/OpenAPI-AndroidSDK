@@ -43,6 +43,19 @@ GameSlotSdk.init(
 配置了 `app:slotId` 的视图在展示时自动请求并渲染广告，无需再写任何代码。
 也可以在代码中主动加载：`view.loadSlot("YOUR_SLOT_ID")`。
 
+### 测试与正式环境
+
+测试接入时，在 `GameSlotConfig` 中显式设置 `environment = GameSlotSdk.Environment.DEV`；
+正式上线设置 `GameSlotSdk.Environment.PROD`，并使用正式环境的凭证和组件 ID（`slot_id`）。
+`AUTO` 根据 SDK 库自身的构建类型选择环境；使用 release AAR 时，即使宿主是 debug App，也会连接正式环境。
+
+| 环境 | 组件接口 | 事件上报接口 |
+|---|---|---|
+| DEV（Sandbox） | `https://openapi-sandbox.minigame.ai/openapi/v4/game/slot` | `https://stats-sandbox.minigame.com/api/wy/report/{event_id}` |
+| PROD | `https://openapi.minigame.ai/openapi/v4/game/slot` | `https://stats.minigame.com/api/wy/report/{event_id}` |
+
+域名和路径迁移由 SDK 内部处理，宿主无需调用 `setServerBaseUrl` 或 `setEventUrl` 覆盖地址。
+
 ### 可用广告位视图
 
 | 视图 | 形态 |

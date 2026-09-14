@@ -13,9 +13,9 @@ object Api {
         }
 
     const val prodAPI = "https://openapi.minigame.ai"
-    const val devAPI= "https://mdev.minigamevs.com"
+    const val devAPI= "https://openapi-sandbox.minigame.ai"
     const val prodReport= "https://stats.minigame.com"
-    const val devReport = "https://mdev.minigamevs.com"
+    const val devReport = "https://stats-sandbox.minigame.com"
 
     private val slotBaseUrl: String
         get() = if (isProdBuild) prodAPI else devAPI
@@ -24,11 +24,11 @@ object Api {
         get() = if (isProdBuild) prodReport else devReport
 
     val SLOT_LIST_PATH: String
-        get() = if (isProdBuild) "/openapi/v4/game/slot" else "/openapiv4_service/openapi/v4/game/slot"
+        get() = "/openapi/v4/game/slot"
 
     fun eventPath(eventId: String): String {
         val id = eventId.trim().trim('/')
-        return if (isProdBuild) "/api/wy/report/$id" else "/stats_service/api/wy/report/$id"
+        return "/api/wy/report/$id"
     }
 
     fun slotListUrl(baseUrl: String): String? {
